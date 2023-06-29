@@ -1,0 +1,56 @@
+
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+ 
+public class JTextFieldBeispiel_act_felder extends JFrame implements ActionListener {
+	 
+	JTextField tfName = new JTextField("           ", 15);
+	JTextField tfVorname = new JTextField("           ", 15);
+	JTextField tfAnrede = new JTextField("           ", 15);
+	public JTextFieldBeispiel_act_felder(){
+	     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		 this.setSize(600, 150);
+		 this.setTitle(" Dialog Eingabe");
+	     JPanel panel = new JPanel();
+	     JLabel labela = new JLabel(" Anrede");
+	     JLabel label = new JLabel(" Name");
+	     JLabel labelv = new JLabel(" Vorname");
+	       //Anrede
+	      panel.add(labela);
+	      panel.add(tfAnrede);
+	      //Name
+	      panel.add(label);
+	      panel.add(tfName);
+	      //Vorname
+	      panel.add(labelv);    
+	      
+	     panel.add(tfVorname);  
+	     
+	     JButton buttonOK = new JButton("OK");
+	     buttonOK.addActionListener(this);
+	      panel.add(buttonOK);
+	      
+	      this.add(panel);
+	      this.pack();
+	       this.setVisible(true);
+	        
+	}
+	
+    public static void main(String[] args) {
+       
+       new JTextFieldBeispiel_act_felder();
+    }
+
+	@Override
+	public void actionPerformed(ActionEvent ev) {
+		System.out.println("Button OK");
+		String text = tfName.getText();
+        System.out.println(text);
+		
+		
+	}
+}
